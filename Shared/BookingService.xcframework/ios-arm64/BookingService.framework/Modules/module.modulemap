@@ -1,0 +1,11 @@
+framework module BookingService {
+  umbrella header "BookingService.h"
+
+  export *
+  module * { export * }
+}
+
+module BookingService.Swift {
+    header "BookingService-Swift.h"
+    requires objc
+}

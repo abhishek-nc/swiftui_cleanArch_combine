@@ -1,0 +1,102 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BookingUI
+@_exported import BookingUI
+import CoreGraphics
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+public struct BUI {
+  public static var bookingLogoWhite: UIKit.UIImage?
+  public static var bookingLogoBrandPrimary: UIKit.UIImage?
+  public enum Font {
+    case small1
+    case small2
+    case body1
+    case body2
+    case emphasized1
+    case emphasized2
+    case strong1
+    case strong2
+    case display1
+    case featured1
+    case headline1
+    case headline2
+    case headline3
+    public var swiftUIFont: SwiftUI.Font {
+      get
+    }
+    public var uiFont: UIKit.UIFont {
+      get
+    }
+    public static func == (a: BookingUI.BUI.Font, b: BookingUI.BUI.Font) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Color {
+    case black
+    case white
+    case background
+    case backgroundAlt
+    case backgroundBase
+    case backgroundBaseAlt
+    case brandPrimaryBackground
+    case brandPrimaryBackgroundDynamic
+    case backgroundElevationOne
+    case backgroundElevationTwo
+    case foreground
+    case foregroundAlt
+    case brandPrimaryForeground
+    case destructiveForeground
+    case constructiveForeground
+    case onBrandPrimaryBackgroundDynamic
+    case border
+    case borderAlt
+    public var swiftUIColor: SwiftUI.Color {
+      get
+    }
+    public var uiColor: UIKit.UIColor {
+      get
+    }
+    public static func == (a: BookingUI.BUI.Color, b: BookingUI.BUI.Color) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct Shadow {
+    public let offset: CoreGraphics.CGSize
+    public let blur: CoreGraphics.CGFloat
+    public let radius: CoreGraphics.CGFloat
+    public let opacity: CoreGraphics.CGFloat
+    public let color: BookingUI.BUI.Color
+    public static var shadow100: BookingUI.BUI.Shadow {
+      get
+    }
+    public static var shadow200: BookingUI.BUI.Shadow {
+      get
+    }
+    public static var shadow300: BookingUI.BUI.Shadow {
+      get
+    }
+  }
+  public static let borderRadius100: CoreGraphics.CGFloat
+  public static let borderRadius200: CoreGraphics.CGFloat
+  public static let borderRadius300: CoreGraphics.CGFloat
+  public static let borderWidth100: CoreGraphics.CGFloat
+  public static let borderWidth200: CoreGraphics.CGFloat
+  public static let spacing1x: CoreGraphics.CGFloat
+  public static let spacing2x: CoreGraphics.CGFloat
+  public static let spacing3x: CoreGraphics.CGFloat
+  public static let spacing4x: CoreGraphics.CGFloat
+  public static let spacing6x: CoreGraphics.CGFloat
+  public static let spacing8x: CoreGraphics.CGFloat
+}
+extension BookingUI.BUI.Font : Swift.Equatable {}
+extension BookingUI.BUI.Font : Swift.Hashable {}
+extension BookingUI.BUI.Color : Swift.Equatable {}
+extension BookingUI.BUI.Color : Swift.Hashable {}

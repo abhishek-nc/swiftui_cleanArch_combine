@@ -1,0 +1,43 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BookingService
+@_exported import BookingService
+import Combine
+import Foundation
+import Swift
+import _Concurrency
+public enum BookingAPIError : Swift.Error {
+  case serverError
+  case invalidUserId
+  public static func == (a: BookingService.BookingAPIError, b: BookingService.BookingAPIError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension BookingService.BookingAPIError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum NetworkLinkConditioner {
+  case highBandwidth
+  case mediumBandwidth
+  case lowBandwidth
+  public static func == (a: BookingService.NetworkLinkConditioner, b: BookingService.NetworkLinkConditioner) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class Network {
+  final public let networkLinkConditioner: BookingService.NetworkLinkConditioner
+  public init(networkLinkConditioner: BookingService.NetworkLinkConditioner = .highBandwidth)
+  public func fetchBookings(userId: Swift.Int) -> Combine.AnyPublisher<Foundation.Data, BookingService.BookingAPIError>
+  public func fetchBookings(userId: Swift.Int, completion: @escaping (Swift.Result<Foundation.Data, BookingService.BookingAPIError>) -> Swift.Void)
+  @objc deinit
+}
+extension BookingService.BookingAPIError : Swift.Equatable {}
+extension BookingService.BookingAPIError : Swift.Hashable {}
+extension BookingService.NetworkLinkConditioner : Swift.Equatable {}
+extension BookingService.NetworkLinkConditioner : Swift.Hashable {}

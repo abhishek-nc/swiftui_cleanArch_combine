@@ -1,0 +1,11 @@
+framework module BookingUI {
+  umbrella header "BookingUI.h"
+
+  export *
+  module * { export * }
+}
+
+module BookingUI.Swift {
+    header "BookingUI-Swift.h"
+    requires objc
+}
